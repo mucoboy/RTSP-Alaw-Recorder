@@ -1,0 +1,35 @@
+﻿<Window x:Class="RTSP_Recorder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RTSP_Recorder"
+        mc:Ignorable="d"
+        Title="RTSP Alaw Recorder" Height="499.091" Width="588.815" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label VerticalContentAlignment="Bottom" Content="RTSP Server Port: " HorizontalAlignment="Left" Margin="27,24,0,0" VerticalAlignment="Top" Height="30"/>
+        <TextBox  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="portTextBox" HorizontalAlignment="Left" Height="30" Margin="138,24,0,0" TextWrapping="Wrap" Text="554" VerticalAlignment="Top" Width="114"/>
+        <ToggleButton Background="#FF91D891" Foreground="White" FontWeight="Bold" x:Name="startStopButton" Click="startStopButton_Click" Content="Start" HorizontalAlignment="Left" Margin="269,24,0,0" VerticalAlignment="Top" Width="75" Height="30"/>
+        <CheckBox VerticalContentAlignment="Center"  x:Name="liveCheckBox" Checked="liveCheckBox_Checked" Unchecked="liveCheckBox_Unchecked" Content="Live Broadcast" HorizontalAlignment="Left" Margin="27,374,0,0" VerticalAlignment="Top" Height="29"/>
+        <ToggleButton  Cursor="Hand" FontWeight="Bold" Background="#FF91D891" Foreground="White" x:Name="playButton" Click="playButton_Click" Checked="playButton_Checked" Unchecked="playButton_Unchecked" Content="Play" HorizontalAlignment="Left" Margin="269,374,0,0" VerticalAlignment="Top" Width="75" Height="29"/>
+        <GroupBox Header="Recordings - Select and Play" HorizontalAlignment="Left" Height="266" Margin="27,90,0,0" VerticalAlignment="Top" Width="317">
+            <Grid>
+                <DataGrid CanUserAddRows="False" IsReadOnly="True" x:Name="recordingsDataGrid" Margin="0"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Connected Sources" HorizontalAlignment="Left" Height="266" Margin="361,90,0,0" VerticalAlignment="Top" Width="181">
+            <Grid>
+                <ListBox x:Name="clientListBox" Margin="0"/>
+
+            </Grid>
+        </GroupBox>
+        <Label x:Name="listenerStatusLabel" Foreground="Red" FontWeight="Bold" HorizontalContentAlignment="Center" Content="Press Start for Recording!" HorizontalAlignment="Left" Margin="361,24,0,0" VerticalAlignment="Top" Width="181" Height="30"/>
+        <ProgressBar x:Name="soundProgress" Value="1" HorizontalAlignment="Left" Height="29" Margin="138,374,0,0" VerticalAlignment="Top" Width="114"/>
+        <Separator HorizontalAlignment="Left" Height="21" Margin="27,59,0,0" VerticalAlignment="Top" Width="515"/>
+
+    </Grid>
+</Window>
